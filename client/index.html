@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intern Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #e0fff4, #d0f0fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: #f0f4ff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      max-width: 400px;
+      z-index: 1;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #16a085, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .underline {
+      height: 4px;
+      width: 120px;
+      margin: 10px auto 25px;
+      background: linear-gradient(to right, #8e2de2, #4a00e0, #ff6ec4);
+      border-radius: 10px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #222;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .wave-bg {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.top-wave {
+  top: 0;
+  position: absolute;
+  transform: rotate(180deg);
+}
+
+.bottom-wave {
+  bottom: 0;
+  position: absolute;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Top Decorative Wave -->
+  
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Intern Portal</h1>
+    <div class="underline"></div>
+    <p>Let’s build something legendary 🚀</p>
+    <button onclick="location.href='dashboard.html'">Login</button>
+  </div>
+
+  <!-- Bottom Decorative Wave -->
+  <svg class="wave-bg bottom-wave" viewBox="0 0 1440 320">
+    <path fill="#d6e4ff" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,80C480,64,600,64,720,80C840,96,960,128,1080,138.7C1200,149,1320,139,1380,133.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</body>
+</html>

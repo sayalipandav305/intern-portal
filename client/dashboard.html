@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intern Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #e0fff4, #d0f0fc);
+      padding: 50px 20px;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dashboard {
+      max-width: 800px;
+      width: 100%;
+      background: #f0f4ff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 0.7s ease-out;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, #16a085, #2980b9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .info-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: #fff;
+      flex: 1;
+      min-width: 220px;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .card-content {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .rewards {
+      margin-top: 30px;
+    }
+
+    .rewards h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+
+    .reward-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .reward-item {
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      font-weight: 600;
+      color: #4a00e0;
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profile-menu {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-family: 'Outfit', sans-serif;
+  z-index: 10;
+}
+
+.avatar {
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: #ffffffaa;
+  padding: 8px 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.avatar:hover {
+  background: #ffffff;
+}
+
+.dropdown {
+  list-style: none;
+  margin-top: 10px;
+  padding: 10px 0;
+  background: #ffffffde;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+  min-width: 130px;
+  position: absolute;
+  right: 0;
+}
+
+.dropdown li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dropdown li:hover {
+  background: #f0f4ff;
+}
+
+  </style>
+</head>
+<body>
+
+
+  <div class="profile-menu">
+  <div class="avatar" onclick="toggleMenu()">👤</div>
+  <ul class="dropdown" id="dropdownMenu">
+    <li>Profile</li>
+    <li>Settings</li>
+  </ul>
+</div>
+
+  <div class="dashboard">
+    <h1>Welcome, Sayali!</h1>
+
+    <div class="info-section">
+      <div class="card">
+        <div class="card-title">Intern Name</div>
+        <div class="card-content">Sayali Pandav</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Referral Code</div>
+        <div class="card-content">sayalipandav2025</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Total Donations Raised</div>
+        <div class="card-content">₹14,250</div>
+      </div>
+    </div>
+
+    <div class="rewards">
+      <h2>Rewards & Unlockables 🎉</h2>
+      <div class="reward-list">
+        <div class="reward-item">Badge: First Donor</div>
+        <div class="reward-item">Certificate: Impact Star</div>
+        <div class="reward-item">Merch: T-shirt</div>
+        <div class="reward-item">Access: VIP Event</div>
+      </div>
+    </div>
+  </div>
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const menu = document.getElementById("dropdownMenu");
+    const avatar = document.querySelector(".avatar");
+    if (!avatar.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+</html>
